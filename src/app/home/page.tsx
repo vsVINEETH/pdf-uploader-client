@@ -101,6 +101,7 @@ export default function Home() {
       <DataSidebar
        setFile={setUploadedFile}
        newFile={newFile}
+       setFileUrl={setFileUrl}
       />
         <div className="w-full max-w-5xl px-4">
           <UploadForm onFileUpload={handleFileUpload} isLoading={isLoading} />

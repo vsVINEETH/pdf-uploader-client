@@ -6,6 +6,7 @@ import { userAtom } from '@/store/userAtom';
 interface SidebarProps {
     setFile: React.Dispatch<React.SetStateAction<File | null>>;
     newFile: string | null;
+    setFileUrl: React.Dispatch<React.SetStateAction<string | null>>
   }
 
   interface FileItem {
@@ -14,7 +15,7 @@ interface SidebarProps {
     _id?: string,
     updatedAt?: string,
   }
-export function DataSidebar({setFile, newFile}: SidebarProps) {
+export function DataSidebar({setFile, newFile, setFileUrl}: SidebarProps) {
   const { getAllFiles } = pdfService;
   const [files, setFiles] = useState<FileItem[]>([]);
   const {getSelectedFile, deleteFile} = pdfService
@@ -52,7 +53,7 @@ export function DataSidebar({setFile, newFile}: SidebarProps) {
             setFiles(prev => prev.filter(file => file.fileName !== fileName));
             if(fileName === newFile){
                setFile(null);
-            }
+            };
         };
      
     } catch (error) {
@@ -63,7 +64,10 @@ export function DataSidebar({setFile, newFile}: SidebarProps) {
   const fetchSelectedFile = async (fileName: string) => {
     try {
       const response = await getSelectedFile(fileName);
-      const blob = new Blob([response.data], { type: 'application/pdf' });
+      setFileUrl(response.data.signedUrl);
+      const byteArray = Uint8Array.from(Buffer.from(response.data.pdfBuffer, 'base64'));
+      console.log(byteArray)
+      const blob = new Blob([byteArray], { type: 'application/pdf' });
       const file = new File([blob], fileName, { type: 'application/pdf' });
       setFile(file);
     } catch (error) {
