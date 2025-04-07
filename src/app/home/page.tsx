@@ -168,7 +168,6 @@ export default function Home() {
                 selectedPages={selectedPages} 
                 onSelectPage={handleSelectPage} 
               />
-
             </div>
           )}
         </div>
