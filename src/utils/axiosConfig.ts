@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
 const axiosInstance = axios.create({
-  baseURL:"https://pdf-uploader-server-s9iw.onrender.com/api",
+  baseURL:"https://pdf-uploader-server-r2v6.onrender.com/api",
   withCredentials: true, 
   headers: {
     "Content-Type": "application/json",
