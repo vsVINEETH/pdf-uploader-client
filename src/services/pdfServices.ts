@@ -31,7 +31,7 @@ export const pdfService = {
   getSelectedFile: async (fileName: string) => {
     const response = await axiosInstance.get("/user/selected_file", {
       params: { fileName },
-      responseType: 'arraybuffer',
+      responseType: 'json',
     });
     return response;
   },
