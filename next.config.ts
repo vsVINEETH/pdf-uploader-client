@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:5000/api/:path*' // Backend port
+        destination: 'https://pdf-uploader-server-s9iw.onrender.com/api/:path*' // Backend port
       },
 
     ];
