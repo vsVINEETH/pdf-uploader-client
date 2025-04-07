@@ -48,7 +48,6 @@ export default function Home() {
   
   const handleDocumentLoad = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
-    // Initially select all pages
     setSelectedPages(Array.from({ length: numPages }, (_, i) => i + 1));
   };
   
