@@ -19,6 +19,7 @@ export default function LoginForm() {
     const {login} = userAuthService
     const router = useRouter()
     const setUser = useSetAtom(userAtom);
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
       setError({})
@@ -29,8 +30,10 @@ export default function LoginForm() {
       try {
         if(!validation()) return
         const response = await login(formData.email, formData.password);
+        console.log(response)
         if(response){
           const { name, email, userId } = response.user;
+
           setUser({
             name,
             email,
