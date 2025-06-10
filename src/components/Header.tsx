@@ -6,7 +6,7 @@ import LogoutButton from "./LogoutButton";
 import { useAtom } from 'jotai';
 import { userAtom } from '@/store/userAtom';
 
-export default function Header() {
+ const  Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const [user] = useAtom(userAtom);
@@ -56,3 +56,4 @@ export default function Header() {
     </header>
   );
 }
+export default Header
