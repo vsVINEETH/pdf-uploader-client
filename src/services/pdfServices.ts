@@ -24,7 +24,7 @@ export const pdfService = {
       params: {userId},
     });
 
-    return response
+    return response;
   },
 
 

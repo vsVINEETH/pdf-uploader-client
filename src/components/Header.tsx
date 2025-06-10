@@ -24,7 +24,7 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-4 items-center">
-       {user?.userId ? <LogoutButton /> : ''}
+       {!user?.userId ? <LogoutButton /> : ''}
         </nav>
 
         {/* Mobile Menu Button */}

@@ -17,7 +17,6 @@ export default function LogoutButton() {
         const response = await logout();
 
         if(response){
-          
           setUser(null);
           router.replace('/login');
         };
