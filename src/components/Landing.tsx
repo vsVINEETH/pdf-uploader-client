@@ -1,6 +1,5 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import withAuth from '@/utils/withAuth';
 
  const LandingPage = () => {
   const router = useRouter();
@@ -32,4 +31,4 @@ import withAuth from '@/utils/withAuth';
   );
 }
 
-export default withAuth(LandingPage)
+export default LandingPage
