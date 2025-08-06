@@ -4,7 +4,7 @@
     - npm run dev
     - http://localhost:3000
   # Live
-    - https://pdfuploader.xyz
+    - https://pdf-uploader-client.vercel.app
 
 
 # 📄 PDF Extractor Application
